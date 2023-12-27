@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer components {
+
+  /* header */
+  .menu {
+    @apply ease-in-out duration-500 flex-nowrap uppercase text-main font-medium text-xl py-5 px-4 hover:text-main-dark mobile:text-main-font mobile:font-normal mobile:hover:text-main-font mobile:text-md mobile:normal-case mobile:py-[7px] mobile:px-5;
+  }
+
+  /* table */
+  .table-item {
+    @apply border-b border-r last-of-type:border-r-0 border-gray-table text-xs text-gray-item p-3 max-w-[322px] break-all;
+  }
+
+  /* pagination component */
+  .current-page {
+    @apply relative z-10 inline-flex items-center bg-indigo-600 px-4 py-2 text-sm font-semibold text-white focus:z-20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600;
+  }
+
+  .ellipsis-page {
+    @apply relative inline-flex items-center px-4 py-2 text-sm font-semibold text-gray-700 ring-1 ring-inset ring-gray-300 focus:outline-offset-0;
+  }
+
+  .nomal-page {
+    @apply relative hidden items-center px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0 md:inline-flex;
+  }
+
+  .page-icon {
+    @apply relative inline-flex items-center px-2 py-2 text-gray-400 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0;
+  }
+
+  .list-pagination {
+    @apply border border-gray-200 rounded-md py-2 px-3 font-semibold text-sm bg-white opacity-100 disabled:opacity-60;
+  }
+
+  /* footer */
+  .ancestor-text {
+    @apply flex font-roboto pb-[18px] text-sm text-gray-dark;
+  }
+
+  .ancestor-icon {
+    @apply w-8 border-2 p-[2px] rounded-full border-black;
+  }
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  cursor: pointer;
+}

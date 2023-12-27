@@ -1,0 +1,13 @@
+{
+    "meta" : {
+        "baseUrl" : "/",
+        "api-baseurl" : "http://localhost:47780",
+        "cdn-baseurl" : "/"
+    },
+    "uris" : {
+        "get-logon-profile" : "/v3/open-api/sign/sign-on",
+        "post-sign-in":"/v3/open-api/sign/sign-in",
+        "get-sign-on" : "/v3/api/sign/sign-on",
+        "post-sign-out" : "/v3/api/sign/sign-out"
+    }
+}

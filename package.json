@@ -1,0 +1,68 @@
+{
+  "name": "sharetreats_v3_b2c_client",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "mock": "npx mockserver -p 47780 -m mock",
+    "serve": "cross-env VUE_APP_SERVER_MODE=dev vue-cli-service --port 7870 serve",
+    "build": "cross-env VUE_APP_SERVER_MODE=dev vue-cli-service build",
+    "build-loc": "cross-env VUE_APP_SERVER_MODE=loc vue-cli-service build",
+    "build-prd": "cross-env VUE_APP_SERVER_MODE=prd vue-cli-service build",
+    "build-stg": "cross-env VUE_APP_SERVER_MODE=stg vue-cli-service build",
+    "help": "vue-cli-service build --help",
+    "serve-loc": "cross-env VUE_APP_SERVER_MODE=loc vue-cli-service --port 7870 serve",
+    "serve-prd": "cross-env VUE_APP_SERVER_MODE=prd vue-cli-service --port 7870 serve",
+    "serve-stg": "cross-env VUE_APP_SERVER_MODE=stg vue-cli-service --port 7870 serve"
+  },
+  "dependencies": {
+    "@heroicons/vue": "^1.0.6",
+    "@vue-hero-icons/solid": "^1.7.2",
+    "autoprefixer": "^10.4.4",
+    "axios": "^0.26.1",
+    "core-js": "^3.8.3",
+    "moment": "^2.29.2",
+    "nodemailer": "^6.7.3",
+    "postcss": "^8.4.12",
+    "postcss-cli": "^9.1.0",
+    "sass": "^1.69.5",
+    "sass-loader": "^13.3.2",
+    "tiny-emitter": "^2.1.0",
+    "vue": "^3.2.13",
+    "vue3-cookies": "^1.0.6"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.16",
+    "@babel/eslint-parser": "^7.12.16",
+    "@headlessui/vue": "^1.6.0",
+    "@tailwindcss/forms": "^0.5.0",
+    "@vue/cli-plugin-babel": "~5.0.0",
+    "@vue/cli-plugin-eslint": "~5.0.0",
+    "@vue/cli-service": "~5.0.0",
+    "cross-env": "^7.0.3",
+    "deepmerge": "^4.2.2",
+    "eslint": "^7.32.0",
+    "eslint-plugin-vue": "^8.5.0",
+    "mockserver": "^3.1.1",
+    "tailwindcss": "^3.0.23"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/vue3-essential",
+      "eslint:recommended"
+    ],
+    "parserOptions": {
+      "parser": "@babel/eslint-parser"
+    },
+    "rules": {}
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead",
+    "not ie 11"
+  ]
+}
