@@ -1,23 +1,23 @@
 <template>
-  <div class="relative border border-neutral-200 rounded w-full h-12 p-0 mobile:h-[50px]">
+  <div class="border flex items-center border-neutral-200 rounded w-full h-12 p-0 mobile:h-[50px]">
     <img
       src="/assets/icons/date.svg"
       alt="icon"
       class="pl-3 py-[14px]"
     />
     <label
-      class="absolute left-[2.7rem] z-0 top-4 h-4 leading-4 text-xs select-none"
+      class="relative left-0 pl-3 z-0 top-0 h-hull w-full leading-[3rem] text-xs select-none"
       :class="{ 'text-gray-input': !model }"
     >
       {{ model || props.placeholder }}
+      <input
+        type="date"
+        :name="props.name"
+        class="absolute top-0 left-0 z-0 px-0 h-full border-0 opacity-0 focus:ring-0 focus-visible:outline-0 w-full py-0 m-0 text-xs"
+        v-model="date"
+        @change="handleDate"
+      /> 
     </label>
-    <input
-      type="date"
-      :name="props.name"
-      class="absolute top-0 z-10 opacity-0 border-0 focus:ring-0 focus-visible:outline-0 w-full h-full pr-3 py-0 pl-[13px] m-0 text-xs"
-      v-model="date"
-      @change="handleDate"
-    /> 
   </div>
 </template>
 

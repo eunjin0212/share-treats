@@ -52,6 +52,8 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   position: absolute;
   top: 0;
   left: 0;
-  opacity: 0;
+  z-index: 20;
+  opacity: 1;
+  color: transparent;
   cursor: pointer;
 }
