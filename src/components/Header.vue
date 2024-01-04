@@ -19,7 +19,7 @@
   <!-- Mobile Menu -->
   <!-- eslint-disable-next-line vue/no-multiple-template-root -->
   <Menu
-    class="hidden duration-300 transition-all relative left-0 z-10 w-full bg-white mobile:flex mobile:flex-col" 
+    class="hidden mobile:duration-300 mobile:transition-all mobile:relative mobile:left-0 mobile:z-10 mobile:w-full mobile:bg-white mobile:flex mobile:flex-col" 
     :class="isOpen ? 'top-0 h-auto' : 'top-[-316px] h-0'"
   />
 </template>
