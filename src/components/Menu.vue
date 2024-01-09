@@ -10,7 +10,7 @@
         </a>
       </li>
       <li v-for="menu in menus" :key="menu.name" :class="menu.class">
-        <a :href="menu.link" :title="menu.title" class="text-nowrap">{{ menu.name }}</a>
+        <a :href="menu.link" :title="menu.title">{{ menu.name }}</a>
       </li>
     </ul>
     <SignInOut />
@@ -31,7 +31,7 @@ const menus = [
     name: 'Petunjuk Penggunaan',
     link: '/how_it_work',
     title: 'how it work',
-    class: 'menu',
+    class: 'menu whitespace-nowrap',
   },
   {
     name: 'Kategori',
