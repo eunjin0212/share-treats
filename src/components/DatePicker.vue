@@ -16,13 +16,15 @@
         class="absolute top-0 left-0 z-0 px-0 h-full border-0 opacity-0 focus:ring-0 focus-visible:outline-0 w-full py-0 m-0 text-xs"
         v-model="date"
         @change="handleDate"
+        :min="limitDate"
       /> 
     </label>
   </div>
 </template>
 
 <script setup>
-import { defineProps, defineEmits, ref, watch } from 'vue'
+import dateFormat from '@/modules/dateFormat'
+import { defineProps, defineEmits, ref, watch, computed } from 'vue'
 
 const props = defineProps({
   placeholder: String,
@@ -51,4 +53,11 @@ function handleDate(event) {
   const year = dateArray[0]
   emits('update:modelValue', `${date}-${month}-${year}`)
 }
+
+const limitDate = computed(() => {
+  const today = new Date()
+  const daysAgo = 30; 
+  const resultDate = new Date(today - (3600000 * 24 * daysAgo))
+  return dateFormat(resultDate)
+})
 </script>
