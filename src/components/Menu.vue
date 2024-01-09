@@ -1,6 +1,6 @@
 <template>
   <nav class="flex w-2/3 justify-between items-center">
-    <ul class="flex flex-row w-1/2 justify-center mobile:flex-col mobile:w-full">
+    <ul class="flex flex-row flex-nowrap w-1/2 justify-center mobile:flex-col mobile:w-full">
       <li class="h-0 w-0 hidden mobile:flex mobile:h-auto mobile:w-full mobile:bg-main mobile:px-[10px]">
         <a target="_blank" href="https://www.facebook.com/ShareTreatsID/">
           <img src="/assets/icons/facebook_white.svg" alt="facebook" class="h-[38px] object-cover py-[10px] px-2">
@@ -10,7 +10,7 @@
         </a>
       </li>
       <li v-for="menu in menus" :key="menu.name" :class="menu.class">
-        <a :href="menu.link" :title="menu.title">{{ menu.name }}</a>
+        <a :href="menu.link" :title="menu.title" class="text-nowrap">{{ menu.name }}</a>
       </li>
     </ul>
     <SignInOut />
@@ -31,7 +31,7 @@ const menus = [
     name: 'Petunjuk Penggunaan',
     link: '/how_it_work',
     title: 'how it work',
-    class: 'text-nowrap menu',
+    class: 'menu',
   },
   {
     name: 'Kategori',
