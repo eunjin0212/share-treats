@@ -39,6 +39,7 @@ const props = defineProps({
   placeholder: String,
   name: String,
   modelValue: String,
+  limited: Number,
 })
 
 const model = ref(props.modelValue);
@@ -61,7 +62,7 @@ function handleDate(value) {
 
 const limitDate = computed(() => {
   const today = new Date()
-  const daysAgo = 30;
+  const daysAgo = props.limited || 30;
   const resultDate = new Date(today - (3600000 * 24 * daysAgo))
   return dateFormatWithStartYear(resultDate)
 })
