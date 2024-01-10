@@ -9,8 +9,8 @@
           <img src="/assets/icons/instagram_white.svg" alt="instagram" class="h-[38px] object-cover px-[10px] py-1.5">
         </a>
       </li>
-      <li v-for="menu in menus" :key="menu.name" :class="menu.class">
-        <a :href="menu.link" :title="menu.title">{{ menu.name }}</a>
+      <li v-for="menu in menus" :key="menu.name" class="flex">
+        <a :href="menu.link" :title="menu.title" :class="menu.class">{{ menu.name }}</a>
       </li>
     </ul>
     <SignInOut />

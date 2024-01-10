@@ -46,11 +46,13 @@ import Checkbox from './Checkbox.vue';
 import Input from './Input.vue'
 import DatePicker from './DatePicker.vue';
 
+
 const phone = ref('')
 const date = ref('')
 const reCaptcha = ref(false)
 function handleSubmit() {
   // submit
 }
+
 
 </script>

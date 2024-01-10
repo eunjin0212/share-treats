@@ -17,6 +17,7 @@
   "dependencies": {
     "@heroicons/vue": "^1.0.6",
     "@vue-hero-icons/solid": "^1.7.2",
+    "@vuepic/vue-datepicker": "^7.4.1",
     "autoprefixer": "^10.4.4",
     "axios": "^0.26.1",
     "core-js": "^3.8.3",

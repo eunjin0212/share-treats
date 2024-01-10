@@ -5,26 +5,35 @@
       alt="icon"
       class="pl-3 py-[14px]"
     />
-    <label
-      class="relative left-0 pl-3 z-0 top-0 h-hull w-full leading-[3rem] text-xs select-none"
-      :class="{ 'text-gray-input': !model }"
-    >
-      {{ model || props.placeholder }}
-      <input
-        type="date"
-        :name="props.name"
-        class="absolute top-0 left-0 z-0 px-0 h-full border-0 opacity-0 focus:ring-0 focus-visible:outline-0 w-full py-0 m-0 text-xs"
-        v-model="date"
-        @change="handleDate"
-        :min="limitDate"
-      /> 
-    </label>
+    <VueDatePicker
+      v-model="date"
+      name="date"
+      class="flex h-full date-picker-component"
+      model-type="dd-MM-yyyy"
+      format="dd-MM-yyyy"
+      preview-format="dd-MM-yyyy"
+      :min-date="limitDate"
+      :placeholder="props.placeholder"
+      hide-input-icon
+      auto-apply
+      input-class-name="h-full border-0 text-xs focus:ring-0 focus-visible:outline-0 placeholder:text-gray-input placeholder:opacity-[1]"
+      @update:model-value="handleDate"
+      :enable-time-picker="false"
+      :action-row="{
+        showNow: false,
+        showPreview: false,
+        showSelect: false,
+        showCancel: false,
+      }"
+    />
   </div>
 </template>
 
 <script setup>
-import dateFormat from '@/modules/dateFormat'
+import dateFormatWithStartYear from '@/modules/dateFormat'
 import { defineProps, defineEmits, ref, watch, computed } from 'vue'
+import VueDatePicker from '@vuepic/vue-datepicker'
+import '@vuepic/vue-datepicker/dist/main.css'
 
 const props = defineProps({
   placeholder: String,
@@ -41,23 +50,30 @@ watch(() => props.modelValue, (newValue) => {
 })
 
 const date = ref('')
-function handleDate(event) {
-  if(!event.target.value) {
+function handleDate(value) {
+  if (!value) {
     emits('update:modelValue', '')
     return;
   }
-  const dateArray = event.target.value.split('-')
 
-  const date = dateArray[2]
-  const month = dateArray[1]
-  const year = dateArray[0]
-  emits('update:modelValue', `${date}-${month}-${year}`)
+  emits('update:modelValue', value)
 }
 
 const limitDate = computed(() => {
   const today = new Date()
-  const daysAgo = 30; 
+  const daysAgo = 30;
   const resultDate = new Date(today - (3600000 * 24 * daysAgo))
-  return dateFormat(resultDate)
+  return dateFormatWithStartYear(resultDate)
 })
 </script>
+<style lang="scss">
+.date-picker-component {
+  >div {
+    width: 100%;
+
+    >.dp__input_wrap {
+      height: 100%;
+    }
+  }
+}
+</style>

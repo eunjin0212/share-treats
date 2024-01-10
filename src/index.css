@@ -44,6 +44,7 @@
   .ancestor-icon {
     @apply w-8 border-2 p-[2px] rounded-full border-black;
   }
+
 }
 
 input[type="date"]::-webkit-calendar-picker-indicator {
